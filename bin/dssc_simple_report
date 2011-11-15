@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+begin
+  require_relative File.join('..', 'lib', 'dssc_simple')
+rescue
+  # Ruby 1.8 Falls back here
+  require 'rubygems'
+
+  $LOAD_PATH.unshift File.join( File.dirname(__FILE__), '..', 'lib')
+  require 'dssc_simple'
+end
+require 'slop'
+
+path = ARGV[0]
+path ||= Dir.pwd
+
+
+report = DsscSimple::Report.new( path )
+report.list_all

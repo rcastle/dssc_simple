@@ -1,0 +1,14 @@
+
+Directory of: file:///Volumes/Users/user_x/project_y
+
+Object Type     Server Status     WS Status         Type        Locked By    Version          Name
+-----------     -------------     ---------         ----        ---------    -------          ----
+File               Up-to-date                       Copy                     1.1              local.file
+File               Up-to-date     Locally Modified  Copy                     1.1              local_modified.file
+File                        -                                                Unmanaged        new_path/new.file
+File               Up-to-date                       Lock        user*        1.2              path/local_locked.file
+File               Up-to-date     Locally Modified  Lock        user*        1.2              path/local_locked_modified.file
+Cached File        Up-to-date                       Cache                    1.3              path/rep_normal.txt
+Cached File      Needs Update                       Cache                    1.2              path/rep_update.txt
+Cached File        Up-to-date                       Cache       otheruser    1.24             path/rep_locked.txt
+Referenced File    Up-to-date                        Reference               Refers to: 1.1   path/local_removed.txt
