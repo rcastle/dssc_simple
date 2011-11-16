@@ -11,4 +11,8 @@ File               Up-to-date     Locally Modified  Lock        user*        1.2
 Cached File        Up-to-date                       Cache                    1.3              path/rep_normal.txt
 Cached File      Needs Update                       Cache                    1.2              path/rep_update.txt
 Cached File        Up-to-date                       Cache       otheruser    1.24             path/rep_locked.txt
-Referenced File    Up-to-date                        Reference               Refers to: 1.1   path/local_removed.txt
+Referenced File    Up-to-date                       Reference                Refers to: 1.1   path/local_removed.txt
+Folder                      -                                                                 path
+Folder                      -                                                Unmanaged        path_extra
+Link to Folder              -                                                Unmanaged        Waveforms
+

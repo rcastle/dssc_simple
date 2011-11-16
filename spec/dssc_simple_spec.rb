@@ -15,7 +15,7 @@ describe DsscSimple::Report do
       result = ''  
       ::File.open( absolute_filename, "rb"){ |f| result = f.read }
       
-      result
+      result.split("\n") 
     end
     
     display = report.list_cached

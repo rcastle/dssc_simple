@@ -85,6 +85,14 @@ module DsscSimple
           line[$1.to_s] = ''
           items << Item.new( :status_unmanaged, line.strip) 
           
+        when /^(\s*Folder\s*-\s*Unmanaged\s*)/
+          line[$1.to_s] = ''
+          items << Item.new( :status_unmanaged, line.strip) 
+
+        when /^(\s*Link to Folder\s*-\s*Unmanaged\s*)/
+          line[$1.to_s] = ''
+          items << Item.new( :status_unmanaged, line.strip) 
+
         when /^(\s*Cached File\s*Up-to-date\s*Cache\s*#{REGEXP_VERSION}\s*)/
           line[$1.to_s] = ''
           items << Item.new( :status_cached,  line.strip) 
@@ -105,6 +113,9 @@ module DsscSimple
           line[$1.to_s] = ''
           items << Item.new( :status_local_missing,  line.strip)
 
+        when /^(\s*Folder\s*-\s*)/
+          ## Ignore
+
         when /^Directory of: file:\/\//
           ## Ignore
         when /^\s*Object Type\s*Server Status\s*WS Status\s*Type\s*Locked By\s*Version\s*Name/
@@ -123,7 +134,7 @@ module DsscSimple
     end
 
     def cached_results 
-      @results ||= run_dssc_ls_mock.split("\n") 
+      @results ||= run_dssc_ls_mock 
     end
 
     def run_dssc_ls_mock
